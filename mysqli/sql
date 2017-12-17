@@ -1,0 +1,78 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 17, 2017 at 08:19 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `post`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statuspost`
+--
+
+CREATE TABLE IF NOT EXISTS `statuspost` (
+  `statusID` int(11) NOT NULL AUTO_INCREMENT,
+  `txt` varchar(256) DEFAULT NULL,
+  `realdate` datetime DEFAULT NULL,
+  `userID` int(11) DEFAULT NULL,
+  `parentID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`statusID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
+--
+-- Dumping data for table `statuspost`
+--
+
+INSERT INTO `statuspost` (`statusID`, `txt`, `realdate`, `userID`, `parentID`) VALUES
+(36, 'Pozdrav!', '2017-09-28 15:18:22', 2, NULL),
+(37, 'sta se radi?', '2017-09-28 15:18:51', 4, NULL),
+(38, 'Ja sam avatar', '2017-09-28 15:19:55', 4, NULL),
+(39, 'African girl', '2017-09-28 15:20:39', 3, NULL),
+(40, 'best fight', '2017-09-28 17:11:48', 2, NULL),
+(41, 'da li znas php?', '2017-09-28 19:31:53', 5, NULL),
+(42, 'sta se radi ovde?', '2017-09-29 11:33:49', 2, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `name_user` varchar(50) DEFAULT NULL,
+  `email_user` varchar(50) DEFAULT NULL,
+  `pass_user` varchar(50) DEFAULT NULL,
+  `img` varchar(1024) DEFAULT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userID`, `name_user`, `email_user`, `pass_user`, `img`) VALUES
+(2, 'slavisa', 'z@gmail.com', '111', 'download.png'),
+(3, 'african', 'a@gmail.com', '1er', 'images.jpg'),
+(4, 'avatar', 's@gmail.com', '3d', 'images.png'),
+(5, 'pera', 'pera.com', '345', 'sample2.jpg');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
